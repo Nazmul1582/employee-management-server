@@ -4,8 +4,11 @@ const connectDB = require('./db/connectDB');
 const app = express();
 const port = process.env.PORT || 5000;
 
+const userRoutes = require("./routes/users")
+
 // middleware 
 applyMiddleware(app);
+app.use(userRoutes)
 
 app.get("/health", (req, res) => {
     res.send("Talent Pulse Server is running... ")
