@@ -17,6 +17,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    bank_account_no: {
+        type: String,
+        required: true
+    },
     salary: {
         type: Number,
         required: true
