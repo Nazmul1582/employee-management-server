@@ -1,7 +1,10 @@
 const { Schema, model } = require("mongoose")
 
 const salarySchema = new Schema({
-    employee: String,
+    name: String,
+    email: String,
+    image: String,
+    designation: String,
     salary: {
         type: Number,
         required: true
