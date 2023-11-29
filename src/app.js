@@ -1,8 +1,6 @@
 const express = require('express');
 const applyMiddleware = require('./middlewares/applyMiddleware');
-const connectDB = require('./db/connectDB');
 const app = express();
-const port = process.env.PORT || 5000;
 
 const userRoutes = require("./routes/users")
 
@@ -10,8 +8,8 @@ const userRoutes = require("./routes/users")
 applyMiddleware(app);
 app.use(userRoutes)
 
-app.get("/health", (req, res) => {
-    res.send("Talent Pulse Server is running... ")
+app.get("/", (req, res) => {
+    res.send("Talent Pulse Server is running..... ")
 })
 
 app.all("*", (req, res, next) => {
@@ -26,12 +24,14 @@ app.use((err, req, res, next) => {
     })
 })
 
-const main = async() => {
-    await connectDB();
+// const main = async() => {
+//     await connectDB();
 
-    app.listen(port, () => {
-        console.log(`Talent Pulse is running on PORT ${port}`);
-    })
+//     app.listen(port, () => {
+//         console.log(`Talent Pulse is running on PORT ${port}`);
+//     })
     
-}
-main();
+// }
+// main();
+
+module.exports = app;
