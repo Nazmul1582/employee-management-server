@@ -3,10 +3,12 @@ const applyMiddleware = require('./middlewares/applyMiddleware');
 const app = express();
 
 const userRoutes = require("./routes/users")
+const authRoutes = require("./routes/authentication/index")
 
 // middleware 
 applyMiddleware(app);
 app.use(userRoutes)
+app.use(authRoutes)
 
 app.get("/", (req, res) => {
     res.send("Talent Pulse Server is running..... ")
