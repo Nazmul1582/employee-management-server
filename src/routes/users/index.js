@@ -12,7 +12,7 @@ router.get("/users/employee/salaries", verifyToken, getSalaries)
 router.post("/users", createUser)
 router.post("/users/employee/pay-salary", verifyToken, verifyHR, paySalary)
 
-router.patch("/users/:id", verifyToken, verifyUser)
+router.patch("/users/:id", verifyToken, verifyHR, verifyUser)
 router.patch("/users/admin/:id", verifyToken, verifyAdmin, firedUser)
 
 module.exports = router;
