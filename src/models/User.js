@@ -36,6 +36,10 @@ const userSchema = new Schema({
     isVerified: {
         type: Boolean,
         default: false
+    },
+    isFired: {
+        type: Boolean,
+        default: false
     }
 })
 

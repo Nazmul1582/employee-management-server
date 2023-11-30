@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUsers, createUser, verifyUser, getSingleUser, paySalary, getSalaries } = require("../../api/users/controllers");
+const { getUsers, createUser, verifyUser, getSingleUser, paySalary, getSalaries, firedUser } = require("../../api/users/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
 const router = express.Router();
 
@@ -11,5 +11,6 @@ router.post("/users", createUser)
 router.post("/users/employee/pay-salary", verifyToken, paySalary)
 
 router.patch("/users/:id", verifyToken, verifyUser)
+router.patch("/users/admin/:id", verifyToken, firedUser)
 
 module.exports = router;
