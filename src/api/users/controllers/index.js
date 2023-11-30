@@ -1,7 +1,8 @@
 const getUsers = require("./getUsers")
+const getSingleUser = require("./getSingleUser")
+const getSalaries = require("./getSalaries")
 const createUser = require("./createUser")
 const verifyUser = require("./verifyUser")
-const getSingleUser = require("./getSingleUser")
 const paySalary = require("./paySalary")
 
 module.exports = {
@@ -9,5 +10,6 @@ module.exports = {
     createUser,
     verifyUser,
     getSingleUser,
-    paySalary
+    paySalary,
+    getSalaries
 }
