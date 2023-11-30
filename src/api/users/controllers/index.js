@@ -5,6 +5,7 @@ const createUser = require("./createUser")
 const verifyUser = require("./verifyUser")
 const paySalary = require("./paySalary")
 const firedUser = require("./firedUser")
+const makeHR = require("./makeHR")
 
 module.exports = {
     getUsers,
@@ -14,4 +15,5 @@ module.exports = {
     paySalary,
     getSalaries,
     firedUser,
+    makeHR
 }
