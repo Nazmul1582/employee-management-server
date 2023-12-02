@@ -9,12 +9,10 @@ const workSheetSchema = new Schema({
         type: Number,
         required: true
     },
-    date: {
-        type: String,
-        required: true
-    },
     name: String,
-    email: String
+    email: String,
+    date: Date,
+    timestamp: { type: Date, default: Date.now }
 })
 
 const WorkSheet = model("WorkSheet", workSheetSchema);

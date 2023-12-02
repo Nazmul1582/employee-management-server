@@ -6,7 +6,7 @@ const getWorkSheet = async(req, res) => {
     if(email){
         query.email = email;
     }
-    const result = await WorkSheet.find(query).sort({date: -1})
+    const result = await WorkSheet.find(query).sort({timestamp: -1})
     res.send(result)
 }
 
