@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUsers, createUser, verifyUser, getSingleUser, paySalary, getSalaries, firedUser, makeHR } = require("../../api/users/controllers");
+const { getUsers, createUser, verifyUser, getSingleUser, paySalary, getSalaries, firedUser, makeHR, createWorkSheet } = require("../../api/users/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
 const verifyAdmin = require("../../middlewares/verifyAdmin");
 const verifyHR = require("../../middlewares/verifyHR");
@@ -11,6 +11,7 @@ router.get("/users/employee/salaries", verifyToken, getSalaries)
 
 router.post("/users", createUser)
 router.post("/users/employee/pay-salary", verifyToken, verifyHR, paySalary)
+router.post("/users/employee/work-sheet", verifyToken, createWorkSheet)
 
 router.patch("/users/:id", verifyToken, verifyHR, verifyUser)
 router.patch("/users/admin/:id", verifyToken, verifyAdmin, firedUser)

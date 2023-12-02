@@ -6,6 +6,7 @@ const verifyUser = require("./verifyUser")
 const paySalary = require("./paySalary")
 const firedUser = require("./firedUser")
 const makeHR = require("./makeHR")
+const createWorkSheet = require("./createWorkSheet")
 
 module.exports = {
     getUsers,
@@ -15,5 +16,6 @@ module.exports = {
     paySalary,
     getSalaries,
     firedUser,
-    makeHR
+    makeHR,
+    createWorkSheet
 }
