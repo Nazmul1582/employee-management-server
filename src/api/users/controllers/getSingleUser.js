@@ -1,8 +1,8 @@
 const User = require("../../../models/User");
 
 const getSingleUser = async(req, res) => {
-    const id = req.params.id;
-    const result = await User.findOne({ _id: id})
+    const email = req.params.email;
+    const result = await User.findOne({ email: email})
     res.send(result);
 }
 

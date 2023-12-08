@@ -1,13 +1,10 @@
 const express = require("express");
 const { getUsers, createUser, verifyUser, getSingleUser, paySalary, getSalaries, firedUser, makeHR, createWorkSheet, getWorkSheet } = require("../../api/users/controllers");
 const { verifyToken, verifyAdmin, verifyHR, verifyEmployee } = require("../../middlewares");
-// const verifyToken = require("../../middlewares/verifyToken");
-// const verifyAdmin = require("../../middlewares/verifyAdmin");
-// const verifyHR = require("../../middlewares/verifyHR");
 const router = express.Router();
 
 router.get("/users", verifyToken, getUsers);
-router.get("/users/:id", getSingleUser)
+router.get("/users/:email", getSingleUser)
 router.get("/users/employee/salaries", verifyToken, getSalaries)
 router.get("/users/employee/work-sheet", verifyToken, getWorkSheet);
 
